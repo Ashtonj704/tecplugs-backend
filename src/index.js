@@ -23,7 +23,7 @@ let io = null;
 // CORS – allow your Vite frontend
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://tecplugs.com"],
     credentials: true,
   })
 );
@@ -161,7 +161,7 @@ app.post("/api/gifts/send", (req, res) => {
 // ===== SOCKET.IO / SIGNALING =====
 io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://tecplugs.com"],
     methods: ["GET", "POST"],
     credentials: true,
   },
